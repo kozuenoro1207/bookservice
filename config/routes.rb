@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
   get 'signup', to:'users#new'
+  get 'question', to:'talkroom#new'
   root to: 'welcome#index'
   get    'login' , to: 'sessions#new'
   post   'login' , to: 'sessions#create'
