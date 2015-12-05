@@ -1,4 +1,11 @@
 <h1>
-  <%= gravatar_for @user %>
-  <%= @user.name %>
+  <div class="icon">
+    <%= gravatar_for @user, size: 100 %> 
+  </div>
+  <div class="name">
+    <%= @user.name %>
+  </div>
+  <div class="status">
+    <%= render 'follow_form' if logged_in? && @user != current_user %>
+  </div>
 </h1>
