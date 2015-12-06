@@ -15,15 +15,15 @@ html,body{
 }
 
 a {
-  color: #337ab7;
+  color: #303030;
   text-decoration: none;
   outline: none;
   &:visited,
   &:active {
-    color: #337ab7;
+    color: #303030;
   }
   &:hover {
-    color: darken(#337ab7, 15%);
+    color: #1e90ff;
   }
   &.btn {
     color: #fff;
@@ -44,10 +44,13 @@ img {
   }
   text-align:center;
   margin:70px auto;
-  background-color:#FCF7D3;
   display:block;
+
+  .main-contents{
+    
+  }
 }
 
 input{
-  margin-top:5px;
+  margin-top: 8px;
 }

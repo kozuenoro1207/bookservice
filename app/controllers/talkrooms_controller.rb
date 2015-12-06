@@ -15,7 +15,7 @@ class TalkroomsController < ApplicationController
     def show
         @talkroom = Talkroom.find(params[:id])
         @comment = current_user.comments.build if logged_in?
-        @comments = @talkroom.comments.order(created_at: :desc)
+        #@comments = @talkroom.comments.order(created_at: :desc)
     end
     
     private

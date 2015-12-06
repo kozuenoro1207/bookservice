@@ -1,20 +1,48 @@
 <div class="box">
-<h1>
-  <div class="icon">
-    <%= gravatar_for @user, size: 100 %> 
-  </div>
-  <div class="name">
-    <%= @user.name %>
-  </div>
-  <div class="status">
-    <%= render 'follow_form' if logged_in? && @user != current_user %>
-  </div>
-</h1>
-<br>
-    <% if @user.talkrooms.any? %>
-      <h3>質問した投稿 (<%= @user.talkrooms.count %>)</h3>
-      <ol class="talkrooms">
-        <%= render @talkrooms %>
-      </ol>
-    <% end %>
+    <div class="main-contents col-xs-8 col-xs-offset-2">
+      <h1>
+        <div class="icon">
+          <%= gravatar_for @user, size: 100 %> 
+        </div>
+        <div class="name">
+          <%= @user.name %>
+        </div>
+        <div class="status">
+          <ul>
+            <li>
+              <div class="status-label">FOLLOWING</div>
+              <div class="status-value">
+                <%= @user.following_users.count %>
+              </div>
+            </li>
+            <li>
+              <div class="status-label">FOLLOWERS</div>
+              <div id="followers" class="status-value">
+                <%= @user.follower_users.count %>
+              </div>
+            </li>
+            <li>
+              <div class="status-label">お気に入りスレッド</div>
+              <div id="favthred_count" class="status-value">
+                （仮）
+              </div>
+            </li>
+            <li>
+              <div class="status-label">お気に入りコメント</div>
+              <div id="favcom_count" class="status-value">
+                （仮）
+              </div>
+            </li>
+          </ul>
+          <%= render 'follow_form' if logged_in? && @user != current_user %>
+        </div>
+      </h1>
+      <br>
+          <% if @user.talkrooms.any? %>
+            <h3>質問した投稿 (<%= @user.talkrooms.count %>)</h3>
+            <ol class="talkrooms">
+              <%= render @talkrooms %>
+            </ol>
+          <% end %>
+      </div>
 </div>
