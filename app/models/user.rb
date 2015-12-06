@@ -7,8 +7,7 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
     has_secure_password
     
-    has_many :comments
-    has_many :talkrooms
+    
     has_many :following_relationships, class_name:  "Relationship",
                                      foreign_key: "follower_id",
                                      dependent:   :destroy
@@ -17,6 +16,12 @@ class User < ActiveRecord::Base
                                     foreign_key: "followed_id",
                                     dependent:   :destroy
     has_many :follower_users, through: :follower_relationships, source: :follower
+    
+    has_many :favoriteships, foreign_key: "user_id", dependent: :destroy
+    has_many :comments, through: :ownerships, source: :comment
+    
+    has_many :comments
+    has_many :talkrooms
     
     def follow(other_user)
         following_relationships.find_or_create_by(followed_id: other_user.id)
@@ -29,5 +34,10 @@ class User < ActiveRecord::Base
 
     def following?(other_user)
         following_users.include?(other_user)
+    end
+    
+    def feed_items
+        #Talkroom.where(user_id: following_user_ids + [self.id])
+        Talkroom.all
     end
 end

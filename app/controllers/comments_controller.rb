@@ -5,6 +5,9 @@ class CommentsController < ApplicationController
         @comment = current_user.comments.build(comment_params)
         if @comment.save
             flash[:success] = "コメントが投稿されました"
+            render request.referer
+        else
+            render request.referer
         end
     end
     

@@ -1,0 +1,27 @@
+
+  .talkrooms {
+    list-style: none;
+    padding: 0;
+    
+    li {
+      padding: 10px 0;
+      border:3px solid #ffcc33;
+      border-radius: 20px;
+      background-color:#fff;
+      margin-top:20px;
+      
+    }
+    .content {
+      font-size:20px;
+      display: block;
+      margin: 10px 15px 10px 15px;
+    }
+
+    .timestamp, .user {
+      text-align:right;
+      padding-top: 0;
+      color: #d3d3d3;
+      display: block;
+      margin-right: 20px;
+    }
+  }

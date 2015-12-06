@@ -1,3 +1,38 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.jumbotron{
+    height:600px;
+    background: image-url("book.jpg") center center no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    
+    & .container-fluid{
+        height:600px;
+        position:relative;
+        color:#fff;
+        margin:0 auto;
+        padding: 10px;
+        background-color:rgba(255,255,255,0.3);
+        h1, p{
+             margin:0 auto;
+             margin-top:10px;
+             text-align:center;
+         }
+         h1{
+             padding-top:20px;
+             font-size:50px;
+         }
+        div {
+            position: relative;
+            text-align:center;
+            margin-top:20%;
+        }
+    }
+}
+
+
+
+

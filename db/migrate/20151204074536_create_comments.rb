@@ -6,6 +6,7 @@ class CreateComments < ActiveRecord::Migration
 
       t.timestamps null: false
       t.index [:user_id, :created_at]
+      #t.index [:talkroom_id, :created_at]
     end
   end
 end

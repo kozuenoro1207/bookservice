@@ -1,0 +1,9 @@
+  <li id="talkroom-<%= talkroom.id %>">
+    <%= link_to talkroom  do %>
+      <span class="content"><%= talkroom.talkname %></span>
+    <% end %>
+    <span class="user"> Created by <%= link_to talkroom.user.name , talkroom.user %></span>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(talkroom.created_at) %> ago.
+    </span>
+  </li>
