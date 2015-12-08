@@ -40,4 +40,5 @@ class User < ActiveRecord::Base
         #Talkroom.where(user_id: following_user_ids + [self.id])
         Talkroom.all
     end
+    
 end

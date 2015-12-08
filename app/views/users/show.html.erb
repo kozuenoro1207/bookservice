@@ -40,9 +40,11 @@
       <br>
           <% if @user.talkrooms.any? %>
             <h3>質問した投稿 (<%= @user.talkrooms.count %>)</h3>
+            <div class="talkroom-center">
             <ol class="talkrooms">
               <%= render @talkrooms %>
             </ol>
+            </div>
           <% end %>
       </div>
 </div>

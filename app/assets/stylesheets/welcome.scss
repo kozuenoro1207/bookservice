@@ -8,19 +8,24 @@
     background-size: cover;
     background-attachment: fixed;
     z-index: 9;
-    min-height: 600px;
+    min-height: 100vh;
     & .container-fluid{
 
         color:#fff;
         margin:0 auto;
+        height:100vh;
         background-color:rgba(255,255,255,0.3);
         .title{
-            padding:15%;
+            padding:20%;
             h1, p{
                  text-align:center;
              }
              h1{
                  font-size:50px;
+             }
+             p{
+                 font-size:20px;
+                 margin-bottom:20%;
              }
             div {
                 position: relative;
