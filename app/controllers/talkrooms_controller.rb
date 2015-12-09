@@ -16,12 +16,13 @@ class TalkroomsController < ApplicationController
         @talkroom = Talkroom.find(params[:id])
         if logged_in?
             @comment = current_user.comments.build 
-            @talkroom_comments = @talkroom.talkroom_comments
+            #@talkroom_comments = @talkroom.talkroom_comments.order(created_at: :desc)
+            @talkroom_comments = Comment.where(talkroom_id: @talkroom.id)
             
             #.includes(:user).order(created_at: :desc)
             #@talkroom_comments = @comments.order(created_at: :desc)
         end
-        render @comments
+        #render @comments
     end
     
     private

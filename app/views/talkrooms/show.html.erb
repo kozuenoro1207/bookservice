@@ -5,8 +5,8 @@
         <%= @talkroom.talkname %>
       </h1>
       <% if logged_in? %>
-          <div class="comments_line">
-            <%= render partial: 'comments/comment', collection: @comments %>
+          <div id="comments-line">
+            <%= render partial:'comments/feed' %>
           </div>
           <div class="comment_form">
             <%= render 'comments/comment_form', talkroom: @talkroom %>
