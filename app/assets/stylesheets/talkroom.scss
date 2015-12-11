@@ -1,3 +1,4 @@
+
 .talkroom-center{
   position: relative;
 }
@@ -28,26 +29,33 @@
       margin: 20px 15px 10px 15px;
     }
     .talk-detail{
-      background-color:#2ca9e1;
-      border: 1px solid #c67f7f;
-      -moz-box-shadow: 0 1px 3px white;
-      -webkit-box-shadow: 0 1px 3px white;
+      background-color:#4ECDC4;
       box-shadow: 0 1px 3px #3f3f3f;
       position:absolute;
       height:30%;
       bottom:0;
       width:100%;
+
       .timestamp, .user {
         font-size:12px;
         padding-left:5px;
         padding-right:5px;
         text-align:right;
-        color: #d3d3d3;
-        display: block;
+        //color: #d3d3ff;
+        display:block;
       }
       .user{
+        a{
+          font-weight: bold;
+        }
         padding-top:8px;
-        color:#d3d3ff;
+      }
+      .favtalk{
+        color: #d3d3d3;
+        font-size:30px;
+        display:block;
+        float:left;
+        padding:15px;
       }
     }
 
@@ -69,6 +77,5 @@
     .btn{
       display:inline-bloack;
       padding:10px;
-      margin-bottom:50px;
     }
 }

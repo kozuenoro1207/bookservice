@@ -5,13 +5,13 @@
         <%= @talkroom.talkname %>
       </h1>
       <% if logged_in? %>
-          <div id="comments-line">
-            <%= render partial:'comments/feed' %>
-          </div>
           <div class="comment_form">
             <%= render 'comments/comment_form', talkroom: @talkroom %>
           </div>
       <% end %>
+      <div id="comments-line">
+          <%= render partial:'comments/feed' %>
+      </div>
     </div>
   </div>
 </div>

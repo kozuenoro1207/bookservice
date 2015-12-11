@@ -30,7 +30,6 @@ gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'bootstrap-sass'
 
-
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -50,3 +49,4 @@ group :development do
   gem 'spring'
 end
 
+gem "font-awesome-rails"

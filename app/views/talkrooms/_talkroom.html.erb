@@ -4,6 +4,7 @@
       <span class="content"><%= talkroom.talkname %></span>
     <% end %>
     <div class="talk-detail">
+      <span class="favtalk fa fa-heart"></span>
       <span class="user"> Created by <%= link_to talkroom.user.name , talkroom.user %></span>
       <span class="timestamp">
         Posted <%= time_ago_in_words(talkroom.created_at) %> ago.

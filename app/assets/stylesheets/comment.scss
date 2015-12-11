@@ -1,52 +1,45 @@
 #comments-line {
-    .comments{
-        margin:30px;
-        background:pink;
-        position: relative;
-        list-style: none;
-        min-height:650px;
-        li {
-          //margin: 0 auto;
-          //margin:0 auto;
-          //padding: 20px;
-          background-color: #fffaff;
-          border: 2px solid #4ECDC4;
-          //border-radius: 20px;
-          //width:80%;
-          //min-height:150px;
-        }
-        /*li:after, li:before {
-        	right: 100%;
-        	top: 50%;
-        	border: solid transparent;
-        	content: " ";
-        	height: 0;
-        	width: 0;
-        	position: absolute;
-        	pointer-events: none;
+    #comments-wrapper{
+        .comment{
+            margin: 0 auto;
+            position: relative;
+            border:2px solid pink;
+            background-color:#fffaff;
+            border-radius: 10px;
+            margin-top:30px;
+            width:80%;
+            min-height: 100px;
+            height: auto !important;
+            height: 100px;
+            padding:10px;
+            .comment-user, .comment-text{
+                display:inline-block;
+                margin: 0 auto;
+                padding: 10px;
+                border: 2px solid #4ECDC4;
+                }
+            .comment-user{
+                float:left;
+                a, .user{
+                    
+                display: block;
+                }
+                .user{
+                    font-size:14px;
+                }
+            }
+            .comment-text{
+                vertical-align:top;
+            }
+            
+            .comment-detail{
+                background-color:#d3d3d3;
+                position:absolute;
+                bottom:5px;
+                right:10px;
+                font-size:10px;
+            }
         }
         
-        li:after {
-        	border-color: rgba(255, 250, 255, 0);
-        	border-right-color: #fffaff;
-        	border-width: 30px;
-        	margin-top: -30px;
-        }
-        li:before {
-        	border-color: rgba(78, 205, 196, 0);
-        	border-right-color: #4ECDC4;
-        	border-width: 33px;
-        	margin-top: -33px;
-        }
-        .content {
-          font-size:16px;
-          display: block;
-          margin: 20px 15px 10px 15px;
-        }
-         .user{
-            padding-top:0;
-            color:#d3d3ff;
-          }
-        }*/
-}
+    }
 }
