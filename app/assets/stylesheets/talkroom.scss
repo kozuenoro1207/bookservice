@@ -32,7 +32,9 @@
       background-color:#4ECDC4;
       box-shadow: 0 1px 3px #3f3f3f;
       position:absolute;
-      height:30%;
+      min-height: 50px;
+      height: auto !important;
+      height: 50px;
       bottom:0;
       width:100%;
 
@@ -40,7 +42,7 @@
         font-size:12px;
         padding-left:5px;
         padding-right:5px;
-        text-align:right;
+        text-align:left;
         //color: #d3d3ff;
         display:block;
       }
@@ -51,11 +53,13 @@
         padding-top:8px;
       }
       .favtalk{
+        border:2px solid pink;
         color: #d3d3d3;
-        font-size:30px;
-        display:block;
-        float:left;
-        padding:15px;
+        font-size:10px;
+        float:right;
+        padding:5px;
+        .onfav{ color: #FF6B6B;}
+        .notfav{ color:#d3d3d3;}
       }
     }
 

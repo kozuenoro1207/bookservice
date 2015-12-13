@@ -1,0 +1,37 @@
+<div class="user-base-status">
+    <div class="icon">
+        <%= gravatar_for @user, size: 100 %> 
+    </div>
+    <div class="name">
+        <%= @user.name %>
+    </div>
+</div>
+<div class="status">
+    <ul>
+        <li>
+            <div class="status-label">FOLLOWING</div>
+            <div class="status-value">
+                <span><%= link_to @user.following_users.count, followings_user_path(@user) %></span>
+            </div>
+        </li>
+        <li>
+            <div class="status-label">FOLLOWERS</div>
+            <div id="followers" class="status-value">
+                <span><%= link_to  @user.follower_users.count, followers_user_path(@user) %></span>
+            </div>
+        </li>
+        <li>
+            <div class="status-label">お気に入りスレッド</div>
+            <div id="favthred_count" class="status-value">
+                <span><%= link_to  @user.fav_talkrooms.count, favtalks_user_path(@user) %></span>
+            </div>
+        </li>
+        <li>
+            <div class="status-label">お気に入りコメント</div>
+            <div id="favcom_count" class="status-value">
+                <span><%= link_to  @user.fav_comments.count, favcoms_user_path(@user) %></span>
+            </div>
+        </li>
+    </ul>
+    <%= render 'follow_form' if logged_in? && @user != current_user %>
+</div>

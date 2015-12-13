@@ -33,11 +33,17 @@
             }
             
             .comment-detail{
-                background-color:#d3d3d3;
+                border: 2px solid #4ECDC4;
                 position:absolute;
                 bottom:5px;
                 right:10px;
                 font-size:10px;
+                .onfav, .notfav{
+                    display:inline-block;
+                    border:2px solid #e3cdc4;
+                }
+                .onfav{ color: #FF6B6B;}
+                .notfav{ color:#d3d3d3;}
             }
         }
         

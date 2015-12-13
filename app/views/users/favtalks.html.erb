@@ -1,0 +1,18 @@
+<div class="box">
+  <div class="row">
+    <div class="main-contents col-xs-8 col-xs-offset-2">
+      <h1>
+        お気に入りスレッド
+      </h1>
+      <div id="comments-line">
+        <% if @talkrooms.any? %>
+            <div class="talkroom-center">
+                <ol class="talkrooms">
+                  <%= render @talkrooms %>
+                </ol>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -38,14 +38,15 @@ img {
 }
 
 .box{
+  text-align:center;
+  margin:70px auto;
+  display:block;
+  padding:20px;
+  
   h1{
     margin-top:30px;
     font-size:25px;
   }
-  text-align:center;
-  margin:70px auto;
-  display:block;
-
   .main-contents{
     background-color:gray;
     min-width:550px;

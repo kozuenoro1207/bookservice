@@ -1,0 +1,12 @@
+<div class="box">
+  <div class="row">
+    <div class="main-contents col-xs-8 col-xs-offset-2">
+      <h1>
+        お気に入りコメント
+      </h1>
+      <div id="comments-line">
+          <%= render partial:'comments/feed', collection: @talkroom_comments %>
+      </div>
+    </div>
+  </div>
+</div>

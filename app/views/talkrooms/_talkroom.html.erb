@@ -4,7 +4,7 @@
       <span class="content"><%= talkroom.talkname %></span>
     <% end %>
     <div class="talk-detail">
-      <span class="favtalk fa fa-heart">
+      <span class="favtalk">
         <%= render partial:"talkrooms/form_fav_talk" , locals: { talkroom: talkroom} if logged_in? %>
      </span>
       <span class="user"> Created by <%= link_to talkroom.user.name , talkroom.user %></span>

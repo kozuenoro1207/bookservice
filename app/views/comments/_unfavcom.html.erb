@@ -1,5 +1,6 @@
 <%= form_for(current_user.favcom_relationships.find_by(comment_id: comment.id),
              html: { method: :delete },
              remote: true) do |f| %>
-  <%= f.submit "unFav", class: "btn btn-danger btn-mini" %>
+  <%= button_tag '<i class="onfav fa fa-heart fa-2x"></i>'.html_safe, :type => "submit", 
+    :class =>"btn btn-link" %>
 <% end %>

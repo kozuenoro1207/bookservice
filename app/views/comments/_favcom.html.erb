@@ -2,5 +2,6 @@
     <span>
     <%= f.hidden_field :comment_id, :value => comment.id %>
     </span>
-    <%= f.submit "fav" %>
+    <%= button_tag '<i class="notfav fa fa-heart fa-2x"></i>'.html_safe, :type => "submit", 
+    :class =>"btn btn-link" %>
 <% end %>

@@ -68,6 +68,5 @@ class User < ActiveRecord::Base
     def favoriting_talk?(talkroom)
       fav_talkrooms.include?(talkroom)
     end
-  
     
 end

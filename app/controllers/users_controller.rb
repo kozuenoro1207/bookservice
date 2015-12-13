@@ -16,6 +16,26 @@ class UsersController < ApplicationController
     @talkrooms = @user.talkrooms.order(created_at: :desc)
   end
   
+  def followings
+    @user = User.find(params[:id])
+    @followings = @user.following_users
+  end
+  
+  def followers
+    @user = User.find(params[:id])
+    @followers = @user.follower_users
+  end
+  
+  def favcoms
+      @user = User.find(params[:id])
+      @talkroom_comments = @user.fav_comments.order(created_at: :desc)
+  end
+  
+  def favtalks
+      @user = User.find(params[:id])
+      @talkrooms = @user.fav_talkrooms.order(created_at: :desc)
+  end
+  
   private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
