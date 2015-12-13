@@ -1,11 +1,13 @@
+#user-base-status{
+  padding:20px;
   .icon {
     width: 100px;
     margin: auto;
     text-align: center;
     img {
       border-radius: 100%;
-      border: 3px solid #c9c9c9;
-      box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+      border: 2px solid #fff;
+      box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
     }
   }
  
@@ -19,6 +21,7 @@
       font-weight: bold;
     }
   }
+}
   .status {
     text-align: center;
     ul {
@@ -40,7 +43,7 @@
           font-size: 12px;
         }
         .status-value {
-          font-size: 18px;
+          font-size: 15px;
         }
       }
     }

@@ -5,9 +5,12 @@
       <div class="genetalk">
         <%= form_for(@talkroom) do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
+        <div class="field" >
           <%= f.hidden_field :user_id , :value => current_user.id %>
           <%= f.text_field :talkname , class: "form-control", placeholder: "例)桜の時期に読みたくなる本" %>
-          <%= f.submit "おすすめをきいてみる", class: "btn btn-large btn-warning" %>
+        </div>
+          <%= button_tag 'おすすめをきいてみる'.html_safe, :type => "submit", 
+    :class =>"btn btn-post" %>
         <% end %>
     </div>
   </div>
