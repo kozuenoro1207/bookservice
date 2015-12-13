@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151205153303) do
+ActiveRecord::Schema.define(version: 20151212140909) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -35,6 +35,16 @@ ActiveRecord::Schema.define(version: 20151205153303) do
   add_index "favoriteships", ["comment_id"], name: "index_favoriteships_on_comment_id"
   add_index "favoriteships", ["user_id", "comment_id"], name: "index_favoriteships_on_user_id_and_comment_id", unique: true
   add_index "favoriteships", ["user_id"], name: "index_favoriteships_on_user_id"
+
+  create_table "favtalkships", force: :cascade do |t|
+    t.integer  "user_id_id"
+    t.integer  "talkroom_id_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "favtalkships", ["talkroom_id_id"], name: "index_favtalkships_on_talkroom_id_id"
+  add_index "favtalkships", ["user_id_id"], name: "index_favtalkships_on_user_id_id"
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "follower_id"

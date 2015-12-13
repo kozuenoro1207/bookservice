@@ -6,7 +6,9 @@ class User < ActiveRecord::Base
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
     has_secure_password
-    
+        
+    has_many :comments
+    has_many :talkrooms
     
     has_many :following_relationships, class_name:  "Relationship",
                                      foreign_key: "follower_id",
@@ -16,12 +18,13 @@ class User < ActiveRecord::Base
                                     foreign_key: "followed_id",
                                     dependent:   :destroy
     has_many :follower_users, through: :follower_relationships, source: :follower
+
+    has_many :favcom_relationships, class_name: "Favoriteship", foreign_key: "user_id", dependent: :destroy
+    has_many :fav_comments, through: :favcom_relationships, source: :comment
     
-    has_many :favoriteships, foreign_key: "user_id", dependent: :destroy
-    has_many :comments, through: :ownerships, source: :comment
+    has_many :favtalk_relationships, class_name: "Favtalkship", foreign_key: "user_id", dependent: :destroy
+    has_many :fav_talkrooms, through: :favtalk_relationships, source: :talkroom
     
-    has_many :comments
-    has_many :talkrooms
     
     def follow(other_user)
         following_relationships.find_or_create_by(followed_id: other_user.id)
@@ -40,5 +43,31 @@ class User < ActiveRecord::Base
         #Talkroom.where(user_id: following_user_ids + [self.id])
         Talkroom.all
     end
+    
+    def favorite_com(comment)
+      favcom_relationships.find_or_create_by(comment_id: comment.id) 
+    end
+    
+    def unfavorite_com(comment)
+      favcom_relationship = favcom_relationships.find_by(comment_id: comment.id)
+      favcom_relationship.destroy if favcom_relationship
+    end
+    def favoriting_com?(comment)
+      fav_comments.include?(comment)
+    end
+    
+    def favorite_talk(talkroom)
+      favtalk_relationships.find_or_create_by(talkroom_id: talkroom.id) 
+    end
+    
+    def unfavorite_talk(talkroom)
+      favtalk_relationship = favtalk_relationships.find_by(talkroom_id: talkroom.id)
+      favtalk_relationship.destroy if favtalk_relationship
+    end
+
+    def favoriting_talk?(talkroom)
+      fav_talkrooms.include?(talkroom)
+    end
+  
     
 end

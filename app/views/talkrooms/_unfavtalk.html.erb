@@ -1,0 +1,7 @@
+<%= current_user.favtalk_relationships.find_or_create_by(:talkroom_id => talkroom.id) %>
+<%#= link_to "" , 
+  favtalkships_path( current_user.favtalk_relationships.find_or_create_by(:talkroom_id => talkroom.id) , 
+    talkroom_id: talkroom.id) ,
+  :class => "btn-#{talkroom.id} fa fa-heart",
+  :remote => true,
+  :method => :delete %> 

@@ -5,7 +5,7 @@
   </div>
   <div  class="comment-text"><%= comment.content %></div>
   <div class="comment-detail">
-    <span>fav()</span>
+    <%= render partial:"comments/form_fav_com" , locals: { comment: comment} if logged_in? %>
     <span class="timestamp">
         Posted <%= time_ago_in_words(comment.created_at) %> ago.
     </span>

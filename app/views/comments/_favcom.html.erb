@@ -1,0 +1,6 @@
+<%= form_for(current_user.favcom_relationships.build, remote: true) do |f| %>
+    <span>
+    <%= f.hidden_field :comment_id, :value => comment.id %>
+    </span>
+    <%= f.submit "fav" %>
+<% end %>

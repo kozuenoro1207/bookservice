@@ -1,0 +1,7 @@
+<div id="favcom-btn-<%= comment.id %>">
+  <% if current_user.favoriting_com?(comment) %>
+    <%= render partial:"comments/unfavcom", locals: { comment: comment} %> 
+  <% else %>
+    <%= render partial:"comments/favcom", locals: { comment: comment} %>
+  <% end %>
+</div>

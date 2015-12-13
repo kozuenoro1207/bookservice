@@ -1,0 +1,5 @@
+<%= form_for(current_user.favcom_relationships.find_by(comment_id: comment.id),
+             html: { method: :delete },
+             remote: true) do |f| %>
+  <%= f.submit "unFav", class: "btn btn-danger btn-mini" %>
+<% end %>

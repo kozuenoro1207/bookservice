@@ -1,0 +1,7 @@
+<div id="favtalk-btn-<%= talkroom.id %>">
+  <% if current_user.favoriting_talk?(talkroom) %>
+    <%= render partial:"talkrooms/unfavtalk", locals: { talkroom: talkroom} %> 
+  <% else %>
+    <%= render partial:"talkrooms/favtalk", locals: { talkroom: talkroom} %>
+  <% end %>
+</div>
